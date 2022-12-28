@@ -1,32 +1,26 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import Navbar from './Components/Navbar'
+import Footer from './Components/Footer'
+import Name from './Components/Name'
+import Dashboard from './Components/Dashboard'
+import './Styles/App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+  const [dashboard , setDashboard] = useState(false)
+  const [name, setName]= useState("")
+
+  //function on change of the input form
+  function handleChange(){
+      setName( event.target.value)
+  }
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Navbar />
+      { !dashboard && <Name changed ={handleChange} dashboard={()=>{setDashboard( dashboard => !dashboard)}}/>}
+      { dashboard && <Dashboard  name={name} />}
+    <Footer />
     </div>
   )
 }
