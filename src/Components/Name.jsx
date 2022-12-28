@@ -1,5 +1,3 @@
-import { AnimationOnScroll } from "react-animation-on-scroll"
-
 export default function Name(props){
     return(
         <div className="name-div">
