@@ -45,7 +45,9 @@ export default function Dashboard(props){
                         </h3>
                         <button className="add-activity" onClick={triggerForm}>+</button>
                     </div>
+                    {form && <ActivityForm changed={handleChange} />}
                     <div className="activities-cards">
+                        <Card property="Scoate Cainele"/>
                     </div>
                 </div>
                 <div className="today-did">
@@ -54,7 +56,6 @@ export default function Dashboard(props){
                     </h3>
                 </div>
             </div>
-            {form && <ActivityForm changed={handleChange} />}
         </div>
         
 
