@@ -73,6 +73,9 @@ body::-webkit-scrollbar{
     font-size: 1rem;
     color: rgba(1, 22, 39, 0.35);
 }
+.submit-name{
+    margin-left: 20px;
+}
 .submit-name:hover{
     box-shadow: 0px 5px 20px 5px rgba(1, 22, 39, 0.15);
 }
@@ -80,6 +83,11 @@ body::-webkit-scrollbar{
     padding: 30px 40px;
     border-radius: 10px;
     box-shadow: 0px 2.5px 5px 2.5px rgba(1, 22, 39, 0.15);
+    background-color: #F5F5F5;
+    width: 50%;
+}
+.today-did{
+    margin-left : 20px;
 }
 .add-activity{
     background-color: var(--dark);
@@ -89,9 +97,18 @@ body::-webkit-scrollbar{
     padding: 5px 10px;
     cursor: pointer;
 }
+.dashboard{
+    padding: 0 100px;
+}
 .card{
     width: 100%;
     padding: 20px;
+}
+.cards-div{
+    margin-top: 90px;
+    display : flex;
+    align-items : top;
+    justify-content : space-between;
 }
 .tick{
     transform: scaleX(-1) rotate(-35deg); /* Chrome, Safari, Opera */
@@ -153,4 +170,43 @@ body::-webkit-scrollbar{
     font-size: 1.2rem;
     color: var(--light);
     margin-right: 10px;
+}
+@media only screen and (max-width:1000px){
+    nav{
+        padding: 0 30px;
+    }
+    .name-div{
+        padding: 0px 30px;
+        margin-bottom: 200px;
+    }
+    .title{
+        text-align: left;
+        font-size: 1.5rem;
+    }
+    .name-form{
+        width: 100%    
+    }
+    .submit-name{
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 10px;
+        font-size: 10rem;
+    }
+    .text{
+        font-size: 1.15rem;
+    }
+    .dashboard{
+        padding: 0 30px;
+    }
+    .cards-div{
+        flex-direction: column;
+        justify-content: none;
+    }
+    .activities, .today-did{
+        width: 100%;
+    }
+    .today-did{
+        margin-left: 0;
+        margin-top: 50px;
+    }
 }

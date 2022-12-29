@@ -13,9 +13,8 @@ export default function Name(props){
                     color: "#FDFFFC",
                     fontSize: "1rem",
                     height: "60px",
-                    marginLeft: "20px",
                     cursor: "pointer",
-                    transition: "0.5s ease-in-out",
+                    transition: "0.5s ease-in-out"
                 }}
                 >Submit</button>
             </label>
