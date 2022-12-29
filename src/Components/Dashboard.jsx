@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import Card from './Card'
 import ActivityForm from './ActivityForm'
+import Card from './Card'
 
 export default function Dashboard(props){
 
@@ -12,21 +12,12 @@ export default function Dashboard(props){
         setForm(form => !form)
     }
 
-    //input state
-    var [current , setCurrent] = useState("")
+    const [current , setCurrent] = useState("")
 
-    function handleChange(){
+    function updateCurrent(){
         setCurrent( current => event.target.value)
     }
 
-    //empty array of activities
-    const activitiesArray =[]
-    
-    //update the array whenever an activity is added
-    function updateArray(){
-        activitiesArray.push(current)
-    }
-    console.log(activitiesArray)
     return(
         <div className="dashboard" style={ {marginTop: "30px", position : "relative"} }>
             <div className="text-div">
@@ -45,9 +36,8 @@ export default function Dashboard(props){
                         </h3>
                         <button className="add-activity" onClick={triggerForm}>+</button>
                     </div>
-                    {form && <ActivityForm changed={handleChange} />}
+                    {form && <ActivityForm />}
                     <div className="activities-cards">
-                        <Card property="Scoate Cainele"/>
                     </div>
                 </div>
                 <div className="today-did">

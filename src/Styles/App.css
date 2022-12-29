@@ -165,6 +165,7 @@ body::-webkit-scrollbar{
     flex-direction: column;
 }
 .difficulty-button{
+    border: 0;
     margin-top: 10px;
     color: var(--light);
     border-radius: 10px;
@@ -179,15 +180,12 @@ body::-webkit-scrollbar{
     cursor: pointer;
 }
 .red{
-    border: 3px rgba(231,29,54,0.65) solid;
     background-color: rgba(231,29,54,0.15);
 }
 .yellow{
-    border: 3px rgba(255 , 159 , 28 , 0.65) solid;
     background-color: rgba(255 , 159 , 28 , 0.15);
 }
 .green{
-    border: 3px rgba(46 , 196 , 182 , 0.65) solid;
     background-color: rgba(46 , 196 , 182 , 0.15);
 }
 .submit-form{
