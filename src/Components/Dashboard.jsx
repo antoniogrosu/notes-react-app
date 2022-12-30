@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import ActivityForm from './ActivityForm'
 import Card from './Card'
+import DoneActivities from './DoneActivities'
 
 export default function Dashboard(props){
 
@@ -23,18 +24,36 @@ export default function Dashboard(props){
         setActivities(newActivities)
         setForm(prev => !prev)
     }
-    //new array to make map through it in the card component
-    let cards=[...activities]
-    
-    //save everything whenever the activities array is changed
-    useEffect(() =>{
-        localStorage.setItem("activities" , JSON.stringify(activities))
-    },[activities])
 
     //refresh day function
     function refreshDay(){
         setActivities([])
+        setDoneActivities([])
     }
+
+    //remove activity => filter with the condition that id is not there
+    function removeActivity(id){
+        const newArr=[...activities].filter( activity => activity.id !== id)
+        setActivities(newArr)
+    }
+
+    //done activities state
+    const [doneActivities , setDoneActivities] = useState(JSON.parse(localStorage.getItem("done")) || [])
+    
+    //get done function
+    function getDone(id){
+        const newArr = [...activities].filter( activity => activity.id === id)
+        const activitiesArr = [...activities].filter( activity => activity.id !== id)
+        setDoneActivities(done => [...done , newArr[0]])
+        setActivities(activitiesArr)
+    }
+
+    //save everything whenever the activities array is changed
+    useEffect(() =>{
+        localStorage.setItem("activities" , JSON.stringify(activities))
+        localStorage.setItem("done" , JSON.stringify(doneActivities))
+    },[activities , doneActivities])
+
     return(
         <div className="dashboard" style={ {marginTop: "120px", position : "relative"} }>
             <div className="text-div" style={{animationName: "fadeIn" , animationDuration: "1.5s"}}>
@@ -55,13 +74,14 @@ export default function Dashboard(props){
                     </div>
                     {form && <ActivityForm  onSubmit={addActivity}/>}
                     <div className="activities-cards">
-                        <Card activities={cards}/>
+                        <Card activities={activities} clicked={getDone} />
                     </div>
                 </div>
                 <div className="today-did">
                     <h3 style={{fontFamily : "Source Sans Pro",color:"#011627"}}>
                         TODAY I DID
                     </h3>
+                    <DoneActivities activities={doneActivities}/>
                 </div>
             </div>
             <button onClick={refreshDay} style={{ padding : "10px 30px" , marginTop: "50px" , borderRadius:"10px" , backgroundColor:"transparent" , fontFamily : "Poppins" , fontSize : "1rem" , color : "rgb(1, 22, 39)" , border: "3px rgb(1, 22, 39) solid" , cursor : "pointer"  }}>Clear all activities</button>

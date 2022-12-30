@@ -117,6 +117,7 @@ body::-webkit-scrollbar{
 .card h2{
     font-family: Poppins;
     font-size: 1rem;
+
 }
 .cards-div{
     margin-top: 90px;
@@ -170,30 +171,6 @@ body::-webkit-scrollbar{
     display: flex;
     align-items: center;
     flex-direction: column;
-}
-.difficulty-button{
-    border: 0;
-    margin-top: 10px;
-    color: var(--light);
-    border-radius: 10px;
-    padding: 0px 10px;
-    width: 50%;
-    height: 40px;
-    font-family: Source Sans Pro;
-    font-size: 1.2rem;
-    margin-right: 10px;
-    background-color: transparent;
-    font-weight: 600;
-    cursor: pointer;
-}
-.red{
-    background-color: rgba(231,29,54,0.15);
-}
-.yellow{
-    background-color: rgba(255 , 159 , 28 , 0.15);
-}
-.green{
-    background-color: rgba(46 , 196 , 182 , 0.15);
 }
 .submit-form{
     margin-top: 20px;
