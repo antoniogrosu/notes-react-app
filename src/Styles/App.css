@@ -4,6 +4,16 @@
     --light : #FDFFFC;
     font-size: 16px;
 }
+body{
+    background-color: var(--light);
+}
+form{
+    padding: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 h2{
     font-family: poppins;
 }
@@ -118,7 +128,7 @@ body::-webkit-scrollbar{
     transform: scaleX(-1) rotate(-35deg); /* Chrome, Safari, Opera */
     transform: scaleX(-1) rotate(-35deg);
 }
-.tick-button,.x-button{
+    .x-button{
     font-weight: 600;
     font-family: Roboto;
     font-size: 1.25rem;
@@ -132,10 +142,7 @@ body::-webkit-scrollbar{
     margin-top: 20px;
     padding:30px;
     border-radius: 20px;
-    box-shadow: 0px 2.5px 5px 2.5px rgba(1, 22, 39, 0.2);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    box-shadow: 0px 1px 5px 1px rgba(1, 22, 39, 0.15);
 }
 .activity-title-input{
     text-indent: 20px;
@@ -199,6 +206,14 @@ body::-webkit-scrollbar{
     cursor: pointer;
 
 }
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 @media only screen and (max-width:1000px){
     nav{
         padding: 0 30px;
@@ -212,7 +227,8 @@ body::-webkit-scrollbar{
         font-size: 1.5rem;
     }
     .name-form{
-        width: 100%    
+        width: 100%;
+        font-size: 16px;
     }
     .submit-name{
         width: 100%;
@@ -238,7 +254,7 @@ body::-webkit-scrollbar{
         margin-left: 0;
         margin-top: 50px;
     }
-    .tick-button,.x-button{
+    .x-button{
         font-size: 1.5rem;
         padding: 1.5px 10px;
         border: 3.5px var(--dark) solid;
