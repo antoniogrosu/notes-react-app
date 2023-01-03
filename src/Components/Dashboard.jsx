@@ -74,7 +74,7 @@ export default function Dashboard(props){
                     </div>
                     {form && <ActivityForm  onSubmit={addActivity}/>}
                     <div className="activities-cards">
-                        <Card activities={activities} clicked={getDone} />
+                        <Card activities={activities} clicked={getDone} delete={removeActivity} />
                     </div>
                 </div>
                 <div className="today-did">
