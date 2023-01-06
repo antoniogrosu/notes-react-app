@@ -3,6 +3,7 @@
     --dark : #011627;
     --light : #FDFFFC;
     font-size: 24px;
+    text-size-adjust: none;
 }
 body{
     background-color: var(--light);
