@@ -57,9 +57,9 @@ export default function Dashboard(props){
     return(
         <div className="dashboard" style={ {marginTop: "120px", position : "relative"} }>
             <div className="text-div" style={{animationName: "fadeIn" , animationDuration: "1.5s"}}>
-                <h1 className="title" style={{marginBottom : "100px" , fontSize : "1.75rem"}}>
+                <h1 className="title" style={{marginBottom : "100px" , fontSize : "1.25rem"}}>
                     Hi, {props.name} !</h1><br></br><h1 className="title"
-                style={{fontSize: "1.75rem"}}>What are your plans for today ?</h1>
+                style={{fontSize: "1.25rem"}}>What are your plans for today?</h1>
                 <p className="text" style={ {marginTop : "25px"}}>
                     Tell me everything  you want and I’ll make sure to remember it for you !
                 </p>
@@ -67,7 +67,7 @@ export default function Dashboard(props){
             <div className="cards-div">
                 <div className="activities">
                     <div className="add-activity-div" style={{display : "flex", alignItems : "center" , justifyContent : "space-between"}}>
-                        <h3 style={{fontFamily : "Source Sans Pro",color:"#011627"}}>
+                        <h3 style={{fontFamily : "Source Sans Pro",color:"#011627" , fontSize: "1rem"}}>
                             ACTIVITIES
                         </h3>
                         <button className="add-activity" onClick={triggerForm} style={{border : "0"}}>+</button>
@@ -78,13 +78,13 @@ export default function Dashboard(props){
                     </div>
                 </div>
                 <div className="today-did">
-                    <h3 style={{fontFamily : "Source Sans Pro",color:"#011627"}}>
+                    <h3 style={{fontFamily : "Source Sans Pro",color:"#011627" , fontSize: "1rem"}}>
                         TODAY I DID
                     </h3>
                     <DoneActivities activities={doneActivities}/>
                 </div>
             </div>
-            <button onClick={refreshDay} style={{ padding : "10px 30px" , marginTop: "50px" , borderRadius:"10px" , backgroundColor:"transparent" , fontFamily : "Poppins" , fontSize : "1rem" , color : "rgb(1, 22, 39)" , border: "3px rgb(1, 22, 39) solid" , cursor : "pointer"  }}>Clear all activities</button>
+            <button onClick={refreshDay} style={{ padding : "10px 30px" , marginTop: "50px" , borderRadius:"10px" , backgroundColor:"transparent" , fontFamily : "Poppins" , fontSize : "0.75rem" , color : "rgb(1, 22, 39)" , border: "3px rgb(1, 22, 39) solid" , cursor : "pointer"  }}>Clear all activities</button>
         </div>
         
 
